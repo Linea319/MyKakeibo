@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">家計簿</string>
+    <string name="action_settings">設定</string>
+    <string name="action_member">メンバー編集</string>
+    <string name="activity_addspend_label">支出を追加</string>
+
+    //key
+    <string name="preference_file_key">com.example.mykakeibo.PREFERENCE_FILE</string>
+    <string name="preference_members_key">KEY_MEMBER</string>
+
+    //debug_tag
+    <string name="debug_tag_member">MEMBER</string>
+</resources>
