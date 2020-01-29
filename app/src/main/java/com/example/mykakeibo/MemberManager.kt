@@ -2,7 +2,6 @@ package com.example.mykakeibo
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.content.SharedPreferences.Editor
 import android.util.Log
 
 class MemberManager {
@@ -35,8 +34,25 @@ class MemberManager {
         val editor = sharedPreferences.edit()
         editor.putStringSet(context.getString(R.string.preference_members_key),nextList)
         editor.apply()
-
+        memberList = nextList
         return true
+    }
+
+    fun removeMember(name: String,context: Context):Boolean{
+        val nextList = getMember(context).toMutableSet()
+
+        val ret = nextList.remove(name)
+        if(ret) {
+            val sharedPreferences: SharedPreferences = context.getSharedPreferences(
+                context.getString(R.string.preference_file_key),
+                Context.MODE_PRIVATE
+            )
+            val editor = sharedPreferences.edit()
+            editor.putStringSet(context.getString(R.string.preference_members_key), nextList)
+            editor.apply()
+            memberList = nextList
+        }
+        return ret
     }
 
     fun getMember(context: Context):Set<String>{
