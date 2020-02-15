@@ -1,5 +1,6 @@
 package com.example.mykakeibo
 
+import android.content.Context
 import androidx.room.*
 import java.time.LocalDate
 
@@ -25,11 +26,11 @@ internal class LocalDateConverter {
 
 @Entity(tableName = "spends") // usersというテーブルのデータベースであることを表す
 data class SpendData(
-    @PrimaryKey val uid: Int, // 主キー ユニークID // 必ず主キーをつける必要がある
+    @PrimaryKey(autoGenerate = true) val uid: Int, // 主キー ユニークID // 必ず主キーをつける必要がある
     val dateMillis:LocalDate, //日付
     val purpose: String, // 名目
     val spender: String, // 払った人
-    val money: Float, //金額
+    val money: Int, //金額
     val category:String //出費のカテゴリ
 )
 
@@ -62,4 +63,14 @@ interface SpendDao {
 @TypeConverters(LocalDateConverter::class)
 abstract class SpendDatabase : RoomDatabase() {
     abstract fun spendDao(): SpendDao
+
+    companion object{
+        private var INSTANCE: SpendDatabase ? = null
+        fun getInstance(context: Context): SpendDatabase {
+            if(INSTANCE == null){
+                INSTANCE = Room.databaseBuilder(context.applicationContext,SpendDatabase::class.java,"SpendDatabase.db").build()
+            }
+            return INSTANCE!!
+        }
+    }
 }
