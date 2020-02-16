@@ -2,17 +2,17 @@ package com.example.mykakeibo
 
 import android.app.DatePickerDialog
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_addspend.*
+import java.time.LocalDate
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
-import java.time.LocalDate
 import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
 
 class AddSpendActivity:AppCompatActivity() {
 
@@ -71,7 +71,9 @@ class AddSpendActivity:AppCompatActivity() {
         val data = SpendData(0,date!!,purpose,spender,money,category)
         val dao = SpendDatabase.getInstance(this).spendDao()
         GlobalScope.async(Dispatchers.Unconfined) {
+            Log.d(getString(R.string.debug_tag_data),"start add data")
             dao.insert(data)
+            Log.d(getString(R.string.debug_tag_data),"complete add data")
         }
 
     }

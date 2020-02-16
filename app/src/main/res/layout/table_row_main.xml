@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@color/colorBlack"
+    >
+
+    <TextView
+        android:id="@+id/row_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:gravity="center"
+        android:text="@string/row_label_date"
+        android:textSize="@dimen/text_small" />
+
+    <TextView
+        android:id="@+id/row_purpose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:background="@color/colorWhite"
+        android:gravity="center"
+        android:text="@string/row_label_purpose"
+        android:textSize="@dimen/text_small" />
+
+    <TextView
+        android:id="@+id/row_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:background="@color/colorWhite"
+        android:gravity="center"
+        android:text="@string/row_label_money"
+        android:textSize="@dimen/text_small" />
+
+    <TextView
+        android:id="@+id/row_person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:background="@color/colorWhite"
+        android:gravity="center"
+        android:text="@string/row_label_person"
+        android:textSize="@dimen/text_small" />
+
+</TableRow>

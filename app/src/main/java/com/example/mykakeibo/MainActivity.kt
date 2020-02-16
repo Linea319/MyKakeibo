@@ -22,6 +22,11 @@ class MainActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
             startActivity(Intent(this,AddSpendActivity::class.java))
         }
+
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        val fragment = MainFragment()
+        fragmentTransaction.add(R.id.main_fragment_container, fragment)
+        fragmentTransaction.commit()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

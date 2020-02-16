@@ -9,6 +9,7 @@
     <string name="dialog_NO">Cancel</string>
     <string name="addmember_dialog_label">追加するメンバー名を入力</string>
     <string name="removemember_dialog_label">このメンバーを削除しますか？</string>
+    <string name="main_spend_label">今月の出費</string>
 
     //key
     <string name="preference_file_key">com.example.mykakeibo.PREFERENCE_FILE</string>
@@ -16,4 +17,12 @@
 
     //debug_tag
     <string name="debug_tag_member">MEMBER</string>
+    <string name="debug_tag_data">DATA</string>
+
+
+    <string name="main_spend_label2">支出一覧</string>
+    <string name="row_label_purpose">支出</string>
+    <string name="row_label_money">金額</string>
+    <string name="row_label_person">払った人</string>
+    <string name="row_label_date">日付</string>
 </resources>

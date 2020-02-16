@@ -1,6 +1,7 @@
 package com.example.mykakeibo
 
 import android.content.Context
+import android.util.Log
 import androidx.room.*
 import java.time.LocalDate
 
@@ -27,7 +28,7 @@ internal class LocalDateConverter {
 @Entity(tableName = "spends") // usersというテーブルのデータベースであることを表す
 data class SpendData(
     @PrimaryKey(autoGenerate = true) val uid: Int, // 主キー ユニークID // 必ず主キーをつける必要がある
-    val dateMillis:LocalDate, //日付
+    val date:LocalDate, //日付
     val purpose: String, // 名目
     val spender: String, // 払った人
     val money: Int, //金額
