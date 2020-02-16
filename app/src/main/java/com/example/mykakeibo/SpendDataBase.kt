@@ -60,7 +60,7 @@ interface SpendDao {
 }
 
 //DB
-@Database(entities = arrayOf(SpendData::class), version = 1)
+@Database(entities = arrayOf(SpendData::class), version = 2)
 @TypeConverters(LocalDateConverter::class)
 abstract class SpendDatabase : RoomDatabase() {
     abstract fun spendDao(): SpendDao

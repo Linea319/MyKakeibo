@@ -70,7 +70,7 @@ class AddSpendActivity:AppCompatActivity() {
 
         val data = SpendData(0,date!!,purpose,spender,money,category)
         val dao = SpendDatabase.getInstance(this).spendDao()
-        GlobalScope.async(Dispatchers.Unconfined) {
+        GlobalScope.async(Dispatchers.Default) {
             Log.d(getString(R.string.debug_tag_data),"start add data")
             dao.insert(data)
             Log.d(getString(R.string.debug_tag_data),"complete add data")
